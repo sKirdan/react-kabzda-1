@@ -1,35 +1,41 @@
 import React from "react";
-import {connect} from "react-redux";
-import Users from "./Users";
-import {followAC, setCurrentPageAC, setUsersTotalCountAC, setUsersAC, unfollowAC} from "../../redux/users-reducer";
+import { connect } from "react-redux";
+import UsersAPIComponents from "./UsersAPIComponents";
+import {
+    followAC,
+    setCurrentPageAC,
+    setUsersTotalCountAC,
+    setUsersAC,
+    unfollowAC,
+} from "../../redux/users-reducer";
 
-let mapStateToProps = (state) =>{
-    return{
+let mapStateToProps = (state) => {
+    return {
         users: state.usersPage.users,
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUserCount,
-        currentPage: state.usersPage.currentPage
-    }
-}
-let mapDispatchToProps = (dispatch) =>{
-    return{
+        currentPage: state.usersPage.currentPage,
+    };
+};
+let mapDispatchToProps = (dispatch) => {
+    return {
         follow: (usersId) => {
-            dispatch(followAC(usersId))
+            dispatch(followAC(usersId));
         },
         unfollow: (usersId) => {
-            dispatch(unfollowAC(usersId))
+            dispatch(unfollowAC(usersId));
         },
 
         setUsers: (users) => {
-            dispatch(setUsersAC(users))
+            dispatch(setUsersAC(users));
         },
         setCurrentPage: (pageNumber) => {
-            dispatch(setCurrentPageAC(pageNumber))
+            dispatch(setCurrentPageAC(pageNumber));
         },
         setTotalUsersCount: (totalCount) => {
-            dispatch(setUsersTotalCountAC(totalCount))
-        }
-    }
-}
+            dispatch(setUsersTotalCountAC(totalCount));
+        },
+    };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps) (Users);
+export default connect(mapStateToProps, mapDispatchToProps)(UsersAPIComponents);
