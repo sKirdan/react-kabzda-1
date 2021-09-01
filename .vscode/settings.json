@@ -1,0 +1,10 @@
+{
+	"prettier.trailingComma": "none",
+	"prettier.arrowParens": "avoid",
+	"prettier.jsxSingleQuote": true,
+	"prettier.printWidth": 180,
+	"prettier.proseWrap": "never",
+	"prettier.vueIndentScriptAndStyle": true,
+	"prettier.useTabs": true,
+	"prettier.documentSelectors": ["<d>d</d>"]
+}
