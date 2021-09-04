@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./users.module.css";
-import userPhoto from "../../assets/images/171-1717870_stockvader-predicted-cron-for-may-user-profile-icon-png.png";
+import userPhoto from './../../assets/images/avatar.png';
+import { NavLink } from "react-router-dom";
 
 let Users = props => {
 	let pagesCount = Math.ceil(props.totalUserCount / props.pageSize);
@@ -16,20 +17,22 @@ let Users = props => {
 				{pages.map(p => {
 					return (
 						<span className={props.currentPage === p && styles.selectedPage}
-							  onClick={() => {props.onPageChanged(p)}}>{p}</span>);
+							onClick={() => { props.onPageChanged(p) }}>{p}</span>);
 				})}
 			</div>
 			{props.users.map(u => (
 				<div key={u.id}>
 					<span>
 						<div>
-							<img src={u.photos.small != null ? u.photos.small : userPhoto} 
-								 className={styles.userPhoto} />
+							<NavLink to={'profile' + u.id}>
+								<img src={u.photos.small != null ? u.photos.small : userPhoto}
+									className={styles.userPhoto} />
+							</NavLink>
 						</div>
 						<div>
-							{u.followed ? (<button onClick={() => {props.unfollow(u.id)}}>Unfollow</button>):
-							(<button onClick={() => {props.follow(u.id)}}>follow</button>	
-							)}
+							{u.followed ? (<button onClick={() => { props.unfollow(u.id) }}>Unfollow</button>) :
+								(<button onClick={() => { props.follow(u.id) }}>follow</button>
+								)}
 						</div>
 					</span>
 					<span>
