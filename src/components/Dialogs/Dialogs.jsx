@@ -1,16 +1,13 @@
 import React from "react";
 import s from "./Dialogs.module.css"
-import {NavLink} from "react-router-dom";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogs-reducer";
-
 
 const Dialogs = (props) => {
     let state = props.dialogsPage;
 
-    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key = {d.id}  id={d.id}/>);
-    let messagesElements = state.messages.map(m => <Message message={m.message} key = {m.id}/>)
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} />);
+    let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id} />)
     let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {
