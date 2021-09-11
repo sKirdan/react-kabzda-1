@@ -13,6 +13,7 @@ const App = (props) => {
 
     return (
 
+
         <div className='app-wrapper'>
             <HeaderContainer />
             <Navbar />
@@ -23,6 +24,7 @@ const App = (props) => {
 
                 <Route path='/profile/:userId?'
                     render={() => <ProfileContainer store={props.store} />} />
+
                 <Route path='/news' component={() => <News />} />
 
                 <Route path='/users'
