@@ -6,5 +6,10 @@
 	"prettier.proseWrap": "never",
 	"prettier.vueIndentScriptAndStyle": true,
 	"prettier.useTabs": true,
-	"prettier.documentSelectors": ["<d>d</d>"]
+	"prettier.documentSelectors": [
+		"<d>d</d>"
+	],
+	"editor.accessibilityPageSize": 7,
+	"editor.scrollbar.verticalScrollbarSize": 10,
+	"editor.fontSize": 11
 }

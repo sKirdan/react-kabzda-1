@@ -8,8 +8,7 @@ class HeaderContainer extends React.Component {
   componentDidMount() {
 
     axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
-      withCredentials: false,
-      origin: 'https://social-network.samuraijs.com/'
+      withCredentials: false
     })
 
       .then(response => {
