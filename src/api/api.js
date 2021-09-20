@@ -11,21 +11,20 @@ export const userAPI = {
         return instans.get(`users?page=${currentPage}&count=${pageSize}`)
             .then(response => response.data)
 
-    }
-}
+    },
 
-export const followedAPI = {
-
-    unfollow(u) {
-        return instans.delete(`follow/${u.id}`)
+    unfollow(userId) {
+        return instans.delete(`follow/${userId}`)
             .then(response => response.data)
     },
-    follow(u) {
+
+    follow(userId) {
         debugger
-        return instans.post(`follow/${u.id}`)
+        return instans.post(`follow/${userId}`)
             .then(response => response.data)
 
     }
 }
+
 
 
