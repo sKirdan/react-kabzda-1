@@ -23,6 +23,15 @@ export const userAPI = {
         return instans.post(`follow/${userId}`)
             .then(response => response.data)
 
+    },
+    getProfile(userId) {
+        return instans.get(`profile/` + userId)
+
+    }
+}
+export const authAPI = {
+    me() {
+        return instans.get(`auth/me`)
     }
 }
 
