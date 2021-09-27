@@ -26,13 +26,15 @@ const App = (props) => {
                 <Route path='/profile/:userId?'
                     render={() => <ProfileContainer store={props.store} />} />
 
+                <Route path='/login'
+                    render={() => <Login />} />
+
                 <Route path='/news' component={() => <News />} />
 
                 <Route path='/users'
                     render={() => <UsersContainer />} />
 
-                <Route path='/login'
-                    render={() => <Login />} />
+
 
             </div>
         </div>
