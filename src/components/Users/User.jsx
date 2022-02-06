@@ -28,7 +28,7 @@ let User = ({user, followingInProgress, unfollow, follow}) => {
                             }}>follow</button>}
 					</div>
 				</span>
-        <span>
+        		<span>
 					<span>
 						<div>{user.name}</div>
 						<div>{user.status}</div>
