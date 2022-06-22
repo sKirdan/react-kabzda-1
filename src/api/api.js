@@ -19,7 +19,6 @@ export const userAPI = {
     },
 
     follow(userId) {
-        debugger
         return instans.post(`follow/${userId}`)
             .then(response => response.data)
 
@@ -41,7 +40,17 @@ export const profileAPI = {
     },
     updateStatus(status) {
         return instans.put('profile/status', { status: status })
+    },
+    savePhoto(photoFile) {
+        const formData = new formData()
+        formData.append("image", photoFile)
+        return instans.put('profile/photo', formData, {
+            headers: {
+                'Content-Type' : 'multipart/form-data'
+            }
+        })
     }
+
 }
 
 export const authAPI = {
